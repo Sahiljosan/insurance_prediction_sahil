@@ -1,0 +1,15 @@
+[2023-06-01 09:50:50,600] root - INFO - *******************Data Ingestion*******************
+[2023-06-01 09:50:50,600] root - INFO - Export collection data as pandas Dataframe
+[2023-06-01 09:50:50,600] root - INFO - Reading data from database: INSURANCE and collection: INSURANCE_PROJECT
+[2023-06-01 09:50:50,819] root - INFO - Find Columns:Index(['_id', 'age', 'sex', 'bmi', 'children', 'smoker', 'region', 'expenses'], dtype='object')
+[2023-06-01 09:50:50,819] root - INFO - Dropping columns:_id
+[2023-06-01 09:50:50,820] root - INFO - Rows and columns in df: (1338, 7)
+[2023-06-01 09:50:50,820] root - INFO - Save data in future store
+[2023-06-01 09:50:50,820] root - INFO - Create Feature store folder if not available
+[2023-06-01 09:50:50,822] root - INFO - Save df to feature_store_folder
+[2023-06-01 09:50:50,827] root - INFO - Spliting Train and Test data
+[2023-06-01 09:50:50,828] root - INFO - Create dataset directory folder if not exist
+[2023-06-01 09:50:50,829] root - INFO - Save dataset to feature store folder
+[2023-06-01 09:50:50,834] root - INFO - Data Ingestion Artifact : DataIngestionArtifact(feature_store_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__095050\\data_ingestion\\feature_store\\insurance.csv', train_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__095050\\data_ingestion\\dataset\\train.csv', test_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__095050\\data_ingestion\\dataset\\test.csv')
+[2023-06-01 09:50:50,834] root - INFO - *******************Data Validation*******************
+[2023-06-01 09:50:50,834] root - INFO - Reading base dataframe
