@@ -52,3 +52,48 @@ class DataValidatonConfig:
         except Exception as e:
             raise InsuranceException(e,sys)
         
+
+class DataTransformationConfig:
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+        try:
+            self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir,"data_tranformation")
+            self.transform_object_path = os.path.join(self.data_transformation_dir,"transformer",TRANSFORMER_OBJECT_FILE_NAME)
+            # calling train data and replacing the extension csv with npz
+            self. transform_train_path = os.path.join(self.data_transformation_dir,"transformed",TRAIN_FILE_NAME.replace("csv","npz"))
+            self. transform_test_path = os.path.join(self.data_transformation_dir,"transformed",TEST_FILE_NAME.replace("csv","npz"))
+
+            self.target_encoder_path = os.path.join(self.data_transformation_dir,"target_encoder", TARGET_ENCODER_OBJECT_FILE_NAME)
+
+        except Exception as e:
+            raise InsuranceException(e,sys)
+        
+
+
+class ModelTrainingConfig:
+    def __init__(self, training_pipeline_config:TrainingPipelineConfig) -> None:
+        try:
+            self.model_trainer_dir = os.path.join(training_pipeline_config.artifact_dir,"model_trainer")
+            self.model_path = os.path.join(self.model_trainer_dir,"model",MODEL_FILE_NAME)
+            # set the threshold for the accuracy, if the accuracy is below 70% then model will not accept
+            self.expected_accuracy = 0.7
+            # set the threshold to check the overfitting
+            self.overfitting_threshold = 0.3
+
+        except Exception as e:
+            raise InsuranceException(e,sys)
+        
+
+
+# Model Evaluation
+class ModelEvaluationConfig:
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig) -> None:
+        self.change_threshold = 0.01
+
+
+
+
+
+
+
+
+        

@@ -1,0 +1,31 @@
+[2023-06-01 12:58:02,611] root - INFO - *******************Data Ingestion*******************
+[2023-06-01 12:58:02,612] root - INFO - Export collection data as pandas Dataframe
+[2023-06-01 12:58:02,612] root - INFO - Reading data from database: INSURANCE and collection: INSURANCE_PROJECT
+[2023-06-01 12:58:02,803] root - INFO - Find Columns:Index(['_id', 'age', 'sex', 'bmi', 'children', 'smoker', 'region', 'expenses'], dtype='object')
+[2023-06-01 12:58:02,803] root - INFO - Dropping columns:_id
+[2023-06-01 12:58:02,804] root - INFO - Rows and columns in df: (1338, 7)
+[2023-06-01 12:58:02,804] root - INFO - Save data in future store
+[2023-06-01 12:58:02,804] root - INFO - Create Feature store folder if not available
+[2023-06-01 12:58:02,806] root - INFO - Save df to feature_store_folder
+[2023-06-01 12:58:02,812] root - INFO - Spliting Train and Test data
+[2023-06-01 12:58:02,813] root - INFO - Create dataset directory folder if not exist
+[2023-06-01 12:58:02,814] root - INFO - Save dataset to feature store folder
+[2023-06-01 12:58:02,819] root - INFO - Data Ingestion Artifact : DataIngestionArtifact(feature_store_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__125802\\data_ingestion\\feature_store\\insurance.csv', train_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__125802\\data_ingestion\\dataset\\train.csv', test_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__125802\\data_ingestion\\dataset\\test.csv')
+[2023-06-01 12:58:02,819] root - INFO - *******************Data Validation*******************
+[2023-06-01 12:58:02,819] root - INFO - Reading base dataframe
+[2023-06-01 12:58:02,822] root - INFO - Replace na value in base df
+[2023-06-01 12:58:02,822] root - INFO - Drop null values columns from base df
+[2023-06-01 12:58:02,823] root - INFO - selecting column name which contains null above to 0.2
+[2023-06-01 12:58:02,824] root - INFO - Columns to drop: []
+[2023-06-01 12:58:02,824] root - INFO - Reading train dataframe
+[2023-06-01 12:58:02,826] root - INFO - Reading test dataframe
+[2023-06-01 12:58:02,828] root - INFO - selecting column name which contains null above to 0.2
+[2023-06-01 12:58:02,828] root - INFO - Columns to drop: []
+[2023-06-01 12:58:02,828] root - INFO - selecting column name which contains null above to 0.2
+[2023-06-01 12:58:02,829] root - INFO - Columns to drop: []
+[2023-06-01 12:58:02,830] root - INFO - Is all required columns present in train_df
+[2023-06-01 12:58:02,830] root - INFO - Is all required columns present in test_df
+[2023-06-01 12:58:02,830] root - INFO - As all column are available in train_df hence detecting data drift
+[2023-06-01 12:58:02,836] root - INFO - As all column are available in test_df hence detecting data drift
+[2023-06-01 12:58:02,840] root - INFO - Write report in yaml file
+[2023-06-01 12:58:02,843] root - INFO - Data Validation Artifact : DataValidationArtifact(report_file_path='G:\\Udemy\\DATA SCIENCE ineuron\\VS Code\\ML_Project_insurance_prediction_sahil\\artifact\\06012023__125802\\data_validation\\report.yaml')
