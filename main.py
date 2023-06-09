@@ -9,7 +9,9 @@ from Insurance_sahil.components.data_ingestion import DataIngestion
 from Insurance_sahil.components.data_valdiation import DataValidation
 from Insurance_sahil.components.data_transformation import DataTransformation
 from Insurance_sahil.components.model_training import ModelTrainer
-from Insurance_sahil.components.
+from Insurance_sahil.components.model_evaluation import ModelEvaluation
+from Insurance_sahil.components.model_pusher import ModelPusher
+
 
 
 # def test_logger_and_exception():
@@ -69,11 +71,22 @@ if __name__ == "__main__":
 
         # Model_Evaluation
         model_eval_config = config_entity.ModelEvaluationConfig(training_pipeline_config= training_pipeline_config)
-        model_eval = Model
+        model_eval = ModelEvaluation(model_eval_config = model_eval_config,
+                                     data_ingestion_artifact = data_ingestion_artifact,
+                                     data_transformation_artifact = data_transformation_artifact,
+                                     model_trainer_artifact = model_trainer_artifact)
+        
+        model_eval_artifact = model_eval.initiate_model_evaluation()
 
 
+        # Model Pusher
+        model_pusher_config = config_entity.ModelPusherConfig(training_pipeline_config = training_pipeline_config)
+        model_pusher = ModelPusher(model_pusher_config = model_pusher_config,
+                 data_transformation_artifact= data_transformation_artifact,
+                 model_trainer_artifact = model_trainer_artifact)
+        
 
-
+        model_pusher_artifact = model_pusher.initiate_model_pusher()
 
 
     except Exception as e:
